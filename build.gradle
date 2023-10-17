@@ -1,0 +1,78 @@
+buildscript {
+    ext {
+//        jooqVersion = '3.12.4'
+        jooqVersion = '3.16.4'
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath group: 'org.jooq', name: 'jooq', version: jooqVersion
+        classpath group: 'org.jooq', name: 'jooq-codegen', version: jooqVersion
+        classpath group: 'org.jooq', name: 'jooq-meta', version: jooqVersion
+        classpath group: 'org.postgresql', name: 'postgresql', version: '42.6.0'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.1.4'
+    id 'io.spring.dependency-management' version '1.1.3'
+}
+
+group = 'com.onedata.jooq.pokemon'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-jooq'
+    implementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'org.springframework:spring-jdbc:6.0.12'
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.6.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+    testImplementation 'junit:junit:4.11'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+import org.jooq.codegen.GenerationTool
+import org.jooq.meta.jaxb.*
+
+task generate {
+    def outputDirectory = projectDir.toString() + '/src/main/java'
+    doLast {
+        GenerationTool.generate(new Configuration()
+                .withJdbc(new Jdbc()
+                        .withDriver('org.postgresql.Driver')
+                        .withUrl('jdbc:postgresql://localhost:5432/jooq-pokemon')
+                        .withUser('postgres')
+                        .withPassword('root'))
+                .withGenerator(new Generator()
+                        .withDatabase(new Database().withInputSchema('public'))
+                        .withGenerate(new Generate()
+                                .withPojos(true)
+                                .withDaos(true))
+                        .withTarget(new Target()
+                                .withPackageName('com.onedata.jooq.pokemon.db')
+                                .withDirectory(outputDirectory)))
+        )
+        println "jOOQ code generation completed."
+    }
+}

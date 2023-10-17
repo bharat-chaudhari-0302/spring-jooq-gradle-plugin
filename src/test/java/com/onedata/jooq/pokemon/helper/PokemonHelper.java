@@ -1,0 +1,94 @@
+package com.onedata.jooq.pokemon.helper;
+
+import com.onedata.jooq.pokemon.db.tables.pojos.Pokemon;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class PokemonHelper {
+
+    public static List<Pokemon> getPokemonData() {
+        List<Pokemon> pokemonList = new ArrayList<>();
+        pokemonList.add(new Pokemon(1, "Bulbasaur", "grass", 45));
+        pokemonList.add(new Pokemon(2, "Ivysaur", "grass", 60));
+        pokemonList.add(new Pokemon(3, "Venusaur", "grass", 80));
+        pokemonList.add(new Pokemon(4, "Charmander", "fire", 39));
+        pokemonList.add(new Pokemon(5, "Charmeleon", "fire", 58));
+        pokemonList.add(new Pokemon(6, "Charizard", "fire", 78));
+        pokemonList.add(new Pokemon(7, "Squirtle", "water", 44));
+        pokemonList.add(new Pokemon(8, "Wartortle", "water", 59));
+        pokemonList.add(new Pokemon(9, "Blastoise", "water", 79));
+        pokemonList.add(new Pokemon(10, "Caterpie", "bug", 45));
+        pokemonList.add(new Pokemon(11, "Metapod", "bug", 50));
+        pokemonList.add(new Pokemon(12, "Butterfree", "bug", 60));
+        pokemonList.add(new Pokemon(13, "Weedle", "bug", 40));
+        pokemonList.add(new Pokemon(14, "Kakuna", "bug", 45));
+        pokemonList.add(new Pokemon(15, "Beedrill", "bug", 65));
+        pokemonList.add(new Pokemon(16, "Pidgey", "normal", 40));
+        pokemonList.add(new Pokemon(17, "Pidgeotto", "normal", 63));
+        pokemonList.add(new Pokemon(18, "Pidgeot", "normal", 83));
+        pokemonList.add(new Pokemon(19, "Rattata", "normal", 30));
+        pokemonList.add(new Pokemon(20, "Raticate", "normal", 75));
+        pokemonList.add(new Pokemon(21, "Spearow", "normal", 40));
+        pokemonList.add(new Pokemon(22, "Fearow", "normal", 65));
+        pokemonList.add(new Pokemon(23, "Ekans", "poison", 35));
+        pokemonList.add(new Pokemon(24, "Arbok", "poison", 60));
+        pokemonList.add(new Pokemon(25, "Pikachu", "electric", 35));
+        pokemonList.add(new Pokemon(26, "Raichu", "electric", 60));
+        pokemonList.add(new Pokemon(27, "Sandshrew", "ground", 50));
+        pokemonList.add(new Pokemon(28, "Sandslash", "ground", 75));
+        pokemonList.add(new Pokemon(29, "Nidoran♀", "poison", 55));
+        pokemonList.add(new Pokemon(30, "Nidorina", "poison", 70));
+        pokemonList.add(new Pokemon(31, "Nidoqueen", "poison", 90));
+        pokemonList.add(new Pokemon(32, "Nidoran♂", "poison", 46));
+        pokemonList.add(new Pokemon(33, "Nidorino", "poison", 61));
+        pokemonList.add(new Pokemon(34, "Nidoking", "poison", 81));
+        pokemonList.add(new Pokemon(35, "Clefairy", "fairy", 70));
+        pokemonList.add(new Pokemon(36, "Clefable", "fairy", 95));
+        pokemonList.add(new Pokemon(37, "Vulpix", "fire", 38));
+        pokemonList.add(new Pokemon(38, "Ninetales", "fire", 73));
+        pokemonList.add(new Pokemon(39, "Jigglypuff", "normal", 115));
+        pokemonList.add(new Pokemon(40, "Wigglytuff", "normal", 140));
+        pokemonList.add(new Pokemon(41, "Zubat", "poison", 40));
+        pokemonList.add(new Pokemon(42, "Golbat", "poison", 75));
+        pokemonList.add(new Pokemon(43, "Oddish", "grass", 45));
+        pokemonList.add(new Pokemon(44, "Gloom", "grass", 60));
+        pokemonList.add(new Pokemon(45, "Vileplume", "grass", 75));
+        pokemonList.add(new Pokemon(46, "Paras", "bug", 35));
+        pokemonList.add(new Pokemon(47, "Parasect", "bug", 60));
+        pokemonList.add(new Pokemon(48, "Venonat", "bug", 60));
+        pokemonList.add(new Pokemon(49, "Venomoth", "bug", 70));
+        pokemonList.add(new Pokemon(50, "Diglett", "ground", 10));
+        pokemonList.add(new Pokemon(51, "Dugtrio", "ground", 35));
+        pokemonList.add(new Pokemon(52, "Meowth", "normal", 40));
+        pokemonList.add(new Pokemon(53, "Persian", "normal", 65));
+        pokemonList.add(new Pokemon(54, "Psyduck", "water", 50));
+        pokemonList.add(new Pokemon(55, "Golduck", "water", 80));
+        pokemonList.add(new Pokemon(56, "Mankey", "fighting", 40));
+        pokemonList.add(new Pokemon(57, "Primeape", "fighting", 65));
+        pokemonList.add(new Pokemon(58, "Growlithe", "fire", 55));
+        pokemonList.add(new Pokemon(59, "Arcanine", "fire", 90));
+        pokemonList.add(new Pokemon(60, "Poliwag", "water", 40));
+        pokemonList.add(new Pokemon(61, "Poliwhirl", "water", 65));
+        pokemonList.add(new Pokemon(62, "Poliwrath", "water", 90));
+        pokemonList.add(new Pokemon(63, "Abra", "psychic", 25));
+        pokemonList.add(new Pokemon(64, "Kadabra", "psychic", 40));
+        pokemonList.add(new Pokemon(65, "Alakazam", "psychic", 55));
+        pokemonList.add(new Pokemon(66, "Machop", "fighting", 70));
+        pokemonList.add(new Pokemon(67, "Machoke", "fighting", 80));
+        pokemonList.add(new Pokemon(68, "Machamp", "fighting", 90));
+        pokemonList.add(new Pokemon(69, "Bellsprout", "grass", 50));
+        pokemonList.add(new Pokemon(70, "Weepinbell", "grass", 65));
+        pokemonList.add(new Pokemon(71, "Victreebel", "grass", 80));
+        pokemonList.add(new Pokemon(72, "Tentacool", "water", 40));
+        pokemonList.add(new Pokemon(73, "Tentacruel", "water", 80));
+        pokemonList.add(new Pokemon(74, "Geodude", "rock", 40));
+        pokemonList.add(new Pokemon(75, "Graveler", "rock", 55));
+        pokemonList.add(new Pokemon(76, "Golem", "rock", 80));
+        pokemonList.add(new Pokemon(77, "Ponyta", "fire", 50));
+        pokemonList.add(new Pokemon(78, "Rapidash", "fire", 65));
+        pokemonList.add(new Pokemon(79, "Slowpoke", "water", 90));
+        pokemonList.add(new Pokemon(80, "Slowbro", "water", 95));
+        return pokemonList;
+    }
+}
